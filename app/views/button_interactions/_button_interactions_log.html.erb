@@ -1,0 +1,7 @@
+    <div class="button_interaction-container" id="button_interaction-<%= button_interaction.id %>">
+      <i class="author">
+        <span><%= button_interaction.user.nickname %></span>
+        <small><%= button_interaction.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+      </i>
+      <p><%= button_interaction.keypressed %></p>
+    </div>

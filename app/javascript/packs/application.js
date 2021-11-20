@@ -11,6 +11,7 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+require ("channels")
 
 
 // ----------------------------------------------------
@@ -27,4 +28,5 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initGameCable();
 });

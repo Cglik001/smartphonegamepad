@@ -1,0 +1,144 @@
+<h1>#<%= @game.gamename %></h1>
+<div id="button_interactions" data-game-id="<%= @game.id %>">
+  <% @game.button_interactions.each do |button_interaction| %>
+    <%= render 'button_interactions/button_interactions_log', button_interaction: button_interaction %>
+  <% end %>
+
+<div class="container">
+  <div class="gamepad" >
+    <%= simple_form_for [ @game, @button_interaction ], remote: true do |f| %>
+      <%# <div class="cross"> %>
+        <h2 id="cross-left">
+          <%= f.button :submit, "Left", class: "btn btn-secondary" %><%#i class="far fa-caret-square-left"></i%>
+        </h2>
+        <h2 id="cross-up">
+          <%# <%= f.input :keypressed, as :submit, input_html: {value: "up"} %>
+          <%= f.button :submit, "UP",  class: "btn btn-secondary" %>
+
+        </h2>
+        <h2 id="cross-down">
+          <%# <%= f.input :keypressed, as: :submit, input_html: {value: "ARROWDOWN"} %>
+          <%= f.button :submit, "DOWN",  class: "btn btn-secondary" %><%#i class="far fa-caret-square-down"></i%>
+        </h2>
+        <h2 id="cross-right">
+          <%= f.button :submit, "RIGHT",  class: "btn btn-secondary" %><%#i class="far fa-caret-square-right"></i%>
+        </h2>
+      </div>
+
+      <div class="circlebuttons">
+        <h2 id="buttonA">
+          <%= f.button :submit, "A", class: "btn btn-danger btn-circle btn-lg" %>
+        </h2>
+         <h2 id="buttonB">
+            <%= f.button :submit, "B", class: "btn btn-danger btn-circle btn-lg"%>
+        </h2>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+<%# <%= simple_form_for [ @game, @button_interaction ], remote: true do |f| %>
+  <%# <div>
+    <%= f.input_field :keypressed, as: :boolean, boolean_style: :inline %>
+    <%# <%= f.input_field :keypressed, as: :boolean, boolean_style: :inline %>
+  <%# </div> %>
+  <%# <div> %>
+     <%# <%= f.input :keypressed, as: :radio_buttons, input_html: {value: true} %>
+     <%# <%= f.button :submit %>
+  <%# </div> %>
+  <%#= f.input :keypressed %>
+  <%#= f.submit%>
+<%# <% end %>
+
+
+
+
+
+
+
+
+
+
+<div class="game-pad-test-container" >
+  <div class="game-pad-test" >
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      <h2 class ="arrowleftbutton">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" value="e.keyCode == 37" autocomplete="off" checked>
+         <%# <%= f.input :keypressed, as :submit, input_html: {value: "true"} %>
+        <label class="btn btn-dark" for="btnradio1">Arrow Left</label>
+      </h2>
+      <h2 class="arrowdownbutton">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+        <label class="btn btn-dark" for="btnradio2">Arrow Down</label>
+      </h2>
+      <h2 class="arrowupbutton">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+        <label class="btn btn-dark" for="btnradio3">Arrow Up</label>
+      </h2>
+      <h2 class="arrowrightbutton">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+        <label class="btn btn-dark" for="btnradio4">Arrow Right</label>
+      </h2>
+      <h2 class="a-button">
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
+          <label class="btn btn-outline-primary" id="a-button" for="btnradio5">A</label>
+      </h2>
+       <h2 class="b-button">
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio6" autocomplete="off">
+          <label class="btn btn-outline-primary" id="b-button" for="btnradio6">B</label>
+      </h2>
+    </div>
+  </div>
+</div>
+
+<div class="game-pad-test-container2" >
+	<div class="controller">
+		<div class="base">
+			<div class="front">
+				<div class="decoration">
+					<div class="stickers">
+						<div class="st-a">A</div>
+						<div class="st-b">B</div>
+						<div class="st-select">SELECT</div>
+						<div class="st-start">START</div>
+					</div>
+					<div class="decoration-central">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+
+				</div>
+				<div class="cross">
+					<div class="circle"></div>
+					<div class="horizontal">
+						<div class="arrowlf"></div>
+						<div class="arrowrh"></div>
+					</div>
+					<div class="vertical">
+						<div class="arrowlf"></div>
+						<div class="arrowrh"></div>
+					</div>
+					<div class="back-cross">
+						<div class="horiz"></div>
+						<div class="vert"></div>
+					</div>
+				</div>
+				<div class="buttons-a-b">
+					<div class="btn-border"><div class="btn-round a"></div></div>
+					<div class="btn-border"><div class="btn-round b"></div></div>
+				</div>
+				<div class="buttons-select">
+					<div class="btn-central select"></div>
+					<div class="btn-central start"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
